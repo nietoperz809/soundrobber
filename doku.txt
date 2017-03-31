@@ -1,0 +1,126 @@
+PittBull's WaveRobber Version 2 (Dokumentation)
+-----------------------------------------------
+
+Es kommt ziemlich oft vor, daß Spieleentwickler ihre Games mit digitalisierten
+Sounds versehen. Dummerweise sind diese Sounds selten als .WAV oder .VOC vor-
+handen. Mittlerweile gibt es eine Menge Tools und Engines für Game-Designer,
+die Sound- und Grafikdaten miteinander verbinden und diese in speziellen Da-
+teien speichern. Manche Programmierer ändern bei WAVE-Files einfach nur die Ex-
+tensions, damit irgendwelche unbedarften User damit nichts anfangen können.
+
+Diesen finsteren Gesellen macht "PittBull's Wave Robber" (im folgenden kurz 
+PWR genannt) nun einen Strich durch die Rechnung. Der PWR ist ein kleines aber
+feines Tool, mit dem man aus Dateien jedweder Art Audio-Samplingdaten heraus-
+"klauen" kann. 
+
+Zum Betrieb des PWR braucht man eine Soundkarte und Windows NT. Eventuell läuft
+er auch unter Windows95 oder Win32s. Das habe ich aber nicht ausprobiert.
+
+Nachdem der PWR gestartet wurde, erscheint für ca. 2 Sekunden eine Copyright-
+Message. Nachdem diese verschwunden ist, tut sich eine Dialogbox mit einer
+Menge Controls auf, von denen die meisten aber erstmal deaktiviert sind.
+
+Nun kann man das Opfer sprich: File seiner Wahl laden. Entweder man tut dies
+über den OPEN-Button oder man zieht die Datei per Dreck.. aeh.. Drag+Drop aus
+dem Dateimanager (oder Explorer) zum PWR 'rüber. Wenn sich das File anstands-
+los öffnen ließ, erhellen sich (fast) alle Controls. Der PWR zeigt damit an,
+daß er nun für weitere Aktionen bereit ist.
+
+Beim Öffnen einer Datei bringt sich der PWR in Grundstellung, d.h. 8 Bits,
+Mono, 11025 Hz Samplingrate. Diese Einstellungen dürften selbst der mie-
+sesten Soundkarte noch ein Geräusch entlocken.
+
+Auf der linken Seite befindet sich die Frame-Box. Diese beinhaltet unter
+anderem zwei Edit-Controls die mit Start bzw. End beschriftet sind. Die bei-
+den Edit-Controls zeigen den Bereich der Datei, den der PWR bearbeiten soll.
+Nach dem Laden einer neuen Datei steht START immer auf Null und END zeigt
+auf das Ende der Datei. Jedes dieser Edit-Controls hat unter sich eine kleine
+korrespondierende ScrollBar mit der man gewissermaßen in der Datei "herum-
+scrollen" kann. Man sollte den gewählten Dateiausschnitt stets im Auge be-
+halten....denn wenn man sich einen 20MB großen Bereich vorknöpft aber nur
+8MB RAM im Computer hat, dann hat man zwar einen schönen Streßtest, aber es
+kann ziemlich lange dauern, bis das erste Geräusch zu hören ist. Böse Zungen
+meinen WINDOWS wäre indianisch, was soviel heißt wie "Weißer Mann starrt auf 
+Eieruhr".
+
+Falls also die zu untersuchende Datei ziemlich groß ist, stellt man sich am
+besten einen Bereich von ca. 1MB ein, z.B. 0 bis 1000000. Wenn man nun PLAY
+anklickt, dann wird dieser Dateiausschnitt geladen und abgespielt. Für gewöhn-
+lich hört man erstmal ein fürchterliches Gekreische. Sollten jedoch Regelmäs-
+sigkeiten auftreten, so liegt die Vermutung nahe, daß es sich um Sampling-
+daten handelt (Dummerweise klingen Grafikdaten oft auch sehr schön...).
+
+Während die Datei abgespielt wird, erscheint im unteren Teil der Frame-Box
+die momentane Position des Filepointers (Current Position). Diesen Wert kann
+man mit den beiden Buttons(<<) rechts neben den Edit-Controls entweder als
+START- oder END-Wert übernehmen (Besonders hilfreich beim Absuchen von Datei-
+en).
+
+Oberhalb der Frame-Box ist befindet sich ein Edit-Control für die Sampling-
+frequenz mit der das File gespielt wird. Der Standart-Windows-NT-Soundkarten-
+treiber für SoundBlaster-kompatible Karten läßt Samplingraten zwischen 4000 Hz
+und 44.1 kHz zu (8 Bits, Mono vorausgesetzt!!).	Der PWR benutzt jedoch den Wave-
+Mapper, dessen wunderbare Eigenschaft, Samplingdaten für die jeweilige Sound-
+karte anzuzpassen, jedes Problem im Keim erstickt. Selbst Samplingraten unter
+1000 Hz sind für ihn kein Thema. Die Samplingfrequenz kann entweder durch manu-
+elle Eingabe im Edit-Control oder durch rauf/runter-tackern mit dem rechts dane-
+ben sitzenden Spin-Control verändert werden. Das Spin-Control verwendet Stan-
+dartwerte, während im Edit-Feld bis auf 1Hz genau die Samplingfrequenz einge-
+stellt werden kann. Viele Soundkarten kommen aber mit exotischen Einstellungen
+nicht klar, was sich spätestens beim nächsten Klick auf den PLAY-Button bemerk-
+bar macht. Für den Fall, daß der Wave-Mapper Ärger machen sollte (Es erscheint
+die Meldung: Undefined External Error) befindet sich oben links in der Ecke ei-
+ne Check-Box, mit der man den Wave-Mapper deaktivieren kann.
+
+Rechts neben der Frame-Box sitzt eine zweite Box namens MODE. Hier kann man
+festlegen, in welcher Form die Daten zu behandeln sind. Die ersten vier Check-
+Boxes (8/16Bits Mono/Stereo) bestimmen, wie die Daten interpretiert werden z.B.
+ob ein Sample-Impuls ein oder zwei Bytes belegt u.s.w. Mit den darauf folgenden 
+drei Check-Boxes kann man Spezialeffekte zum Entschlüsseln von Sounddaten aus-
+wählen. REVERSE bedeutet, daß die Datei rückwärts abgespielt wird. Klickt man
+XOR an, so wird jedes Byte der Datei mit dem Wert rechts neben XOR Exklusiv-
+Oder verknüpft. Mit ADD hat man die Möglichkeit, einen festen Wert zu jedem 
+einzelnen Byte zu addieren. Beide Features (XOR und ADD) hantieren mit Bytes.
+Demzufolge müssen sich alle Eingaben im Wertebereich 0...255 bewegen.
+
+Hat man ein schönes Sample gefunden, dann kann man es mit dem PWR als Windows-
+Wave-File (*.WAV) zur weiteren Bearbeitung mit einem SoundEditor abspeichern.  
+Dazu klickt man einfach auf den Button >MAKE WAVE<. Sämtliche Einstellungen
+und Modifikationen durch den PWR, also solche mit XOR o.ä., werden in das Wave-
+File übernommen.
+
+
+
+Beispiel: Wir extrahieren Samplingdaten aus einem MOD-File
+--------------------------------------------------------------
+
+Mit auf der Diskette befindet sich ein File im MOD-Format. Dieses Format stammt
+ursprünglich vom Amiga. Es erfreut sich aber auch unter DOS-Freaks und Game-
+designern großer Beliebtheit. Ein MOD-File ist eine Art Zwitter aus MIDI und
+Samplingdaten. Am Anfang befinden sich die einzelnen Noten etc. und dahinter
+liegen die Instrumente in digitalisierter Form. 
+
+Als erstes starten wir den PWR und öffnen das File (DRAGNET.MOD). Falls es
+bis hierher gut ging, erscheint im END-Control die Zahl 229701, die Länge
+der Datei in Bytes.
+
+Jetzt können wir schon mal versuchen, das Ganze abzuspielen. Im Voraus ge-
+sagt, es wird nicht schön klingen, aber drücken wir erstmal PLAY.... Ein
+widerliches Getöse quält sich aus den Lautsprechern. 
+
+Nun ist es aber so (das muß man einfach wissen), daß Audio-Daten in einem MOD-
+File vorzeichenbehaftet sind. Sie müssen also erstmal erstmal in ein Wave-
+Format umgewandelt werden, mit dem WINDOWS 'was anfangen kann. Zu diesem 
+Zweck addieren wir einfach den Wert 128 dazu. Also Check-Box ADD angeklickt
+und 128 eingegeben. Wenn wir jetzt PLAY anklicken, hört es sich schon viel
+besser an.
+
+Das einzige was jetzt noch stört, sind die Noten am Anfang des MOD's. Mit ein
+bißchen Spielerei an der START-Scrollbar und Feinabgleich am dazugehörigen
+Edit-Control, kriegen wir raus, daß die Samplingdaten ungefähr bei File-Po-
+sition 46008 beginnen.
+
+11025 Hz sind ein wenig zu schnell. Im Speed-Control stellen wir deshalb eine
+Frequenz von ca. 9000 Hz ein. Nun einfach abspeichern (MAKE WAVE), und fertig!
+
+ 

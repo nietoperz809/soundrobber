@@ -1,0 +1,248 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\soundrobber.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\treiber.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 169, 54
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_STATICEDGE
+FONT 10, "Courier", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,16,19,21,20,0,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "WaveRobber Version 3\n Pittbull's Killer Tools\n (C) 1996",
+                    IDC_STATIC,52,15,101,28
+END
+
+IDD_SOUNDROBBER_DIALOG DIALOGEX 0, 0, 247, 165
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_STATICEDGE | WS_EX_APPWINDOW
+FONT 8, "Arial"
+BEGIN
+    PUSHBUTTON      "Open File",IDC_BUTTON_OPEN,3,115,73,10,NOT WS_TABSTOP
+    PUSHBUTTON      "Play it",IDC_BUTTON_PLAY,3,126,73,10,NOT WS_TABSTOP
+    PUSHBUTTON      "Stop Playin'",IDC_BUTTON_STOP,3,137,73,10,NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "Create Wave !",IDC_BUTTON_WAVE,3,148,73,10,NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_END,38,65,63,12,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_START,38,33,63,12,ES_AUTOHSCROLL | NOT 
+                    WS_TABSTOP
+    LTEXT           "Start",IDC_STATIC,14,35,20,8
+    LTEXT           "End",IDC_STATIC,17,67,15,8
+    EDITTEXT        IDC_EDIT_SPEED,55,8,33,12,ES_AUTOHSCROLL | NOT 
+                    WS_TABSTOP
+    CONTROL         "Spin1",IDC_SPIN_SPEED,"msctls_updown32",UDS_ARROWKEYS,
+                    89,8,11,12,WS_EX_TRANSPARENT
+    GROUPBOX        "Mode",IDC_STATIC,135,5,67,104,BS_CENTER | BS_FLAT
+    LTEXT           "Speed:",IDC_STATIC,30,10,24,8
+    CHECKBOX        "Mono",IDC_CHECK_MONO,144,47,34,8,NOT WS_TABSTOP
+    CHECKBOX        "Stereo",IDC_CHECK_STEREO,144,55,37,8,NOT WS_TABSTOP
+    CHECKBOX        "Reverse",IDC_CHECK_REVERSE,144,63,43,8,NOT WS_TABSTOP
+    CHECKBOX        "16 Bits",IDC_CHECK_16BITS,144,39,44,8,NOT WS_TABSTOP
+    CHECKBOX        "8 Bits",IDC_CHECK_8BITS,144,31,40,8,NOT WS_TABSTOP
+    GROUPBOX        "Frame",IDC_STATIC,8,20,120,89,BS_CENTER | BS_FLAT
+    EDITTEXT        IDC_POSITION,63,93,43,12,ES_READONLY | WS_DISABLED | NOT 
+                    WS_TABSTOP
+    CONTROL         "Current Pos:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP,18,
+                    94,40,8
+    PUSHBUTTON      "<<",IDC_GET_START,107,37,14,9,NOT WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_GET_END,107,67,14,9,NOT WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,106,99,14,1,
+                    WS_EX_TRANSPARENT
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,119,45,1,23,
+                    WS_EX_TRANSPARENT
+    SCROLLBAR       IDC_SCROLL_VOLUME,228,11,8,96,SBS_VERT
+    LTEXT           "V\nO\nL\nU\nM\nE",IDC_STATIC,220,35,8,53,NOT WS_GROUP
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,214,8,29,102
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,119,76,1,23
+    CHECKBOX        "XOR",IDC_CHECK_XOR,144,79,28,8,NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_XOR,174,78,19,12,ES_AUTOHSCROLL | NOT 
+                    WS_TABSTOP
+    CHECKBOX        "Add",IDC_CHECK_ADD,144,93,29,8,NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_ADD,174,92,19,12,ES_AUTOHSCROLL | NOT 
+                    WS_TABSTOP
+    CHECKBOX        "WaveMapper",IDC_CHECK_MAPPER,144,23,57,8,NOT WS_TABSTOP
+    CONTROL         "",IDC_PICTURE,"Static",SS_WHITEFRAME | SS_REALSIZEIMAGE | 
+                    WS_BORDER,94,123,142,28
+    GROUPBOX        "PittbullScope",IDC_STATIC,84,111,159,48,BS_CENTER
+    CONTROL         "Slider1",IDC_SLIDER_START,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS,9,46,103,12
+    CONTROL         "Slider1",IDC_SLIDER_END,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS,9,78,103,12
+END
+
+IDD_DEVCAPS_DIALOG DIALOGEX 0, 0, 129, 127
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+CAPTION "Waveform Device Capabilities"
+FONT 7, "Small Fonts"
+BEGIN
+    PUSHBUTTON      "Close",IDOK,88,103,34,15,NOT WS_TABSTOP,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    EDITTEXT        IDC_DCAPS,7,7,115,90,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | NOT 
+                    WS_BORDER | NOT WS_TABSTOP,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    COMBOBOX        IDC_COMBO_DEVS,7,104,63,130,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SOUNDROBBER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 243
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 159
+    END
+
+    IDD_DEVCAPS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 122
+        VERTGUIDE, 79
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DEVCAPS_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_DEVS, 0x403, 12, 0
+0x6157, 0x6576, 0x4d20, 0x7061, 0x6570, 0x0072, 
+    IDC_COMBO_DEVS, 0x403, 9, 0
+0x6544, 0x6976, 0x6563, 0x3120, "\000" 
+    IDC_COMBO_DEVS, 0x403, 9, 0
+0x6544, 0x6976, 0x6563, 0x3220, "\000" 
+    IDC_COMBO_DEVS, 0x403, 9, 0
+0x6544, 0x6976, 0x6563, 0x3320, "\000" 
+    IDC_COMBO_DEVS, 0x403, 9, 0
+0x6544, 0x6976, 0x6563, 0x3420, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About"
+    IDS_DEVCAPS             "&Device Caps"
+    IDS_TITLE               "PittBull's WaveRobber for Windows NT"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\soundrobber.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
